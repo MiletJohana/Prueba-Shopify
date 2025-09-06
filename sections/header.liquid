@@ -1,0 +1,47 @@
+{% assign settings = section.settings %}
+
+<header class="header" role="banner">
+  <div class="header__inner">
+    <!-- Logo -->
+    <div class="header__logo">
+      <a href="/" aria-label="Logo">{{ settings.logo_text }}</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="header__nav" role="navigation">
+      <ul class="header__menu">
+        {% for link in settings.links %}
+          <li class="header__menu-item">
+            <a href="{{ link.url }}">{{ link.label }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <!-- Icons -->
+    <div class="header__icons">
+      <a href="/cart" class="header__cart" aria-label="Cart">
+        🛒
+      </a>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo Text",
+      "default": "MyShopify"
+    },
+    {
+      "type": "link_list",
+      "id": "links",
+      "label": "Navigation Links"
+    }
+  ]
+}
+{% endschema %}
