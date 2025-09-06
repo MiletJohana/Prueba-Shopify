@@ -1,0 +1,24 @@
+{% assign settings = section.settings %}
+
+<div class="topbar" aria-hidden="true">
+  <div class="topbar__marquee">
+    <div class="topbar__track">
+      <span class="topbar__item">{{ settings.marquee_text }}</span>
+      <span class="topbar__item">{{ settings.marquee_text }}</span>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Topbar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "marquee_text",
+      "label": "Marquee Text",
+      "default": "FREE SHIPPING FOR ORDERS OVER $100 • FREE RETURNS"
+    }
+  ]
+}
+{% endschema %}
