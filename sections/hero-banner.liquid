@@ -1,0 +1,16 @@
+<section class="hero-banner" style="background-image: url({{ section.settings.background_image | asset_url }});">
+  <div class="hero-banner__content">
+    <a href="{{ section.settings.button_link }}" class="hero-banner__button">
+      {{ section.settings.button_text }}
+    </a>
+  </div>
+
+  <div class="hero-banner__marquee">
+    <div class="hero-banner__marquee-inner">
+      <span>{{ section.settings.marquee_text }}</span>
+      <span>{{ section.settings.marquee_text }}</span>
+      <span>{{ section.settings.marquee_text }}</span>
+    </div>
+  </div>
+</section>
+
