@@ -4,3 +4,36 @@ body {
   margin: 0;
   padding: 0;
 }
+.topbar {
+  width: 100%;
+  overflow: hidden;
+  background: #6b2af5; /* color morado del diseño */
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.topbar__marquee {
+  white-space: nowrap;
+}
+
+.topbar__track {
+  display: flex;
+  gap: 40px;
+  animation: marquee 16s linear infinite;
+  padding: 6px 0;
+  will-change: transform;
+}
+
+.topbar__item {
+  padding: 0 12px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
