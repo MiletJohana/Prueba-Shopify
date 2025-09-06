@@ -16,6 +16,12 @@
         "background_image": "hero_banner_img.avif"
       }
     },
+    "topbar": {
+      "type": "topbar",
+      "settings": {
+        "marquee_text": "FREE SHIPPING FOR ORDERS OVER $100 • FREE RETURNS"
+      }
+    },
     "footer": {
       "type": "footer",
       "settings": {
@@ -28,6 +34,11 @@
           { "label": "Refund Policy", "url": "/refund-policy" },
           { "label": "Privacy Policy", "url": "/privacy-policy" },
           { "label": "Terms of Service", "url": "/terms-of-service" }
+        ],
+        "socials": [
+          { "name": "Facebook", "url": "https://facebook.com" },
+          { "name": "X", "url": "https://x.com" },
+          { "name": "Instagram", "url": "https://instagram.com" }
         ]
       }
     }
