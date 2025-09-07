@@ -22,6 +22,19 @@
         "marquee_text": "FREE SHIPPING FOR ORDERS OVER $100 • FREE RETURNS"
       }
     },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_text": "SHUFFLE",
+        "links": [
+          { "label": "Home", "url": "/" },
+          { "label": "Products", "url": "/collections/all" },
+          { "label": "Collections", "url": "/collections" },
+          { "label": "About", "url": "/about" },
+          { "label": "Contact", "url": "/contact" }
+        ]
+      }
+    },
     "footer": {
       "type": "footer",
       "settings": {

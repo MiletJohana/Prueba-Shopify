@@ -19,6 +19,7 @@ app.set('views', path.resolve(__dirname, 'templates'));
 app.set('view engine', 'liquid');
 
 app.use(express.static('public'));
+app.use('/assets', express.static('assets'));
 
 const products = require('./data/products.json');
 const collections = require('./data/collections.json');
@@ -26,6 +27,14 @@ const settings = JSON.parse(fs.readFileSync('./config/settings_data.json', 'utf-
 
 app.get('/', (req, res) => {
   res.render('index', { 
+    products, 
+    collections, 
+    settings: settings.sections
+  });
+});
+
+app.get('/test', (req, res) => {
+  res.render('test', { 
     products, 
     collections, 
     settings: settings.sections

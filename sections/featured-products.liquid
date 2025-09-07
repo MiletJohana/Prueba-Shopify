@@ -1,8 +1,15 @@
 <section class="featured-products">
-  <h2>{{ settings['featured-products'].settings.heading }}</h2>
+  <h2 class="section-title">
+    <span class="section-title__star">✦</span>
+    SHUFFLE ESSENTIALS
+    <span class="section-title__star">✦</span>
+  </h2>
   <div class="product-list">
-    {% for product in products %}
+    {% for product in products limit: 4 %}
       {% render 'product-card', product: product %}
     {% endfor %}
+  </div>
+  <div class="featured-products__cta">
+    <a href="/collections/all" class="featured-products__button">VIEW ALL</a>
   </div>
 </section>

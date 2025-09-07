@@ -1,11 +1,16 @@
 <div class="product-card">
-  <h3>{{ product.title }}</h3>
-  <p>Price: ${{ product.price }}</p>
-  {% if product.tags %}
-    <ul>
-      {% for tag in product.tags %}
-        <li>{{ tag }}</li>
-      {% endfor %}
-    </ul>
-  {% endif %}
+  <div class="product-card__image" style="background-image: url('/assets/{{ product.image }}');">
+  </div>
+  <div class="product-card__content">
+    <h3>{{ product.title }}</h3>
+    <div class="product-card__price">${{ product.price }}</div>
+    <p class="product-card__description">{{ product.description }}</p>
+    {% if product.tags %}
+      <div class="product-card__tags">
+        {% for tag in product.tags %}
+          <span class="product-card__tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
 </div>

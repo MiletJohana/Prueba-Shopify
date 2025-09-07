@@ -1,47 +1,54 @@
-{% assign settings = section.settings %}
-
 <header class="header" role="banner">
   <div class="header__inner">
     <!-- Logo -->
     <div class="header__logo">
-      <a href="/" aria-label="Logo">{{ settings.logo_text }}</a>
+      <a href="/" aria-label="Logo" class="header__logo-link">
+        <div class="header__logo-icon">
+          <div class="header__logo-star">★</div>
+        </div>
+        <div class="header__logo-text">
+          <span class="header__logo-main">SHUFFLE</span>
+          <div class="header__logo-separator"></div>
+          <span class="header__logo-store">STORE</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Payment Methods -->
+    <div class="header__payment">
+      <div class="header__payment-container">
+        <span class="header__payment-text">We Accept</span>
+        <div class="header__payment-icons">
+          <div class="header__payment-icon header__payment-icon--bitcoin" title="Bitcoin">₿</div>
+          <div class="header__payment-icon header__payment-icon--ethereum" title="Ethereum">⟠</div>
+          <div class="header__payment-icon header__payment-icon--litecoin" title="Litecoin">Ł</div>
+          <div class="header__payment-icon header__payment-icon--dogecoin" title="Dogecoin">Ð</div>
+          <div class="header__payment-icon header__payment-icon--usd" title="USD">$</div>
+        </div>
+      </div>
     </div>
 
     <!-- Navigation -->
     <nav class="header__nav" role="navigation">
       <ul class="header__menu">
-        {% for link in settings.links %}
-          <li class="header__menu-item">
-            <a href="{{ link.url }}">{{ link.label }}</a>
-          </li>
-        {% endfor %}
+        <li class="header__menu-item">
+          <a href="/collections/all">All Products</a>
+        </li>
+        <li class="header__menu-item">
+          <a href="/collections">Collections</a>
+        </li>
       </ul>
     </nav>
 
-    <!-- Icons -->
-    <div class="header__icons">
-      <a href="/cart" class="header__cart" aria-label="Cart">
-        🛒
+    <!-- Cart Button -->
+    <div class="header__cart-container">
+      <a href="/cart" class="header__cart-button" aria-label="Cart">
+        <svg class="header__cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="m1 1 4 4 13 0 3 8-13 0"></path>
+        </svg>
       </a>
     </div>
   </div>
 </header>
-
-{% schema %}
-{
-  "name": "Header",
-  "settings": [
-    {
-      "type": "text",
-      "id": "logo_text",
-      "label": "Logo Text",
-      "default": "MyShopify"
-    },
-    {
-      "type": "link_list",
-      "id": "links",
-      "label": "Navigation Links"
-    }
-  ]
-}
-{% endschema %}
